@@ -2,13 +2,13 @@
 
 
 <h2>Description</h2>
-This lab was designed to demonstrate foundational networking concepts by building and configuring a small Local Area Network (LAN) using Cisco Packet Tracer.
+In this lab, I'll design a segmented AWS network using resources such as VPC's, EC2, IGW and subnets to create a segmented network. One private, and one public. This could simulate a company with an application facing public internet, with backend processes that are private. These two segments are still able to communicate to one another.
 <br />
 
 
 <h2>Utilities Used</h2>
 
-- <b>Cisco Packet Tracer</b> 
+- <b>AWS Console</b> 
 
 
 
