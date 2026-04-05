@@ -125,6 +125,7 @@ This simulates real-world workloads inside your cloud infrastructure.
 ✅ **Expected Result:**  
 Two running instances in separate subnets.
 <img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_222838_kt8293.png" />
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_221851_syigwk.png" />
 <img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_222229_j0mt6e.png" />
 
 
@@ -147,18 +148,22 @@ Security Groups act as a **virtual firewall**.
 
 ✅ **Expected Result:**  
 Secure and controlled communication between resources.
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775394718/Screenshot_2026-04-05_091143_ghf49w.png" />
+
 
 ---
 
 ## 📡 Step 7: Connect to Public EC2 (Jump Host)
 
 📝 **What you're doing:**  
-Using the public EC2 instance as a **jump host (bastion)** to access internal resources.
+Using the public EC2 instance as a **jump host (bastion)** to access internal resources, as well as being capable of testing the internal connection between the two instances. 
 
 💡 **Why this matters:**  
 The private EC2 does not have a public IP, so it **cannot be accessed directly from the internet**.  
 The public EC2 acts as a secure entry point into the private network.
 
-⚙️ **Steps:**
-```bash
-ssh -i your-key.pem ec2-user@<public-ip>
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264477/Screenshot_2026-04-02_214408_iz56wk.png" />
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264477/Screenshot_2026-04-02_220306_jo2i6r.png" />
+
+
+
