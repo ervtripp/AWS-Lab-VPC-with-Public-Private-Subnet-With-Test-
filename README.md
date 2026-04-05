@@ -1,49 +1,154 @@
-<h1>AWS Lab: VPC With Public and Private Subnets</h1>
+# 🧪 AWS Networking Lab: Public & Private Subnet Architecture
 
+## 🎯 Objective
+Design and deploy a secure AWS network using a custom VPC with public and private subnets, enabling controlled internet access and internal communication between resources.
 
-<h2>Description</h2>
-In this lab, I'll design a segmented AWS network using resources such as VPC's, EC2, IGW and subnets to create a segmented network. One private, and one public. This could simulate a company with an application facing public internet, with backend processes that are private. These two segments are still able to communicate to one another.
-<br />
+---
 
+## 🛠️ Services Used
+- ☁️ Amazon VPC  
+- 🖥️ Amazon EC2  
+- 🌐 Internet Gateway  
+- 📡 Route Tables  
+- 🔐 Security Groups  
 
-<h2>Utilities Used</h2>
+---
 
-- <b>AWS Console</b> 
+## 🧱 Architecture Overview
+- 1 VPC (10.0.0.0/16)
+- 1 Public Subnet (10.0.1.0/24)
+- 1 Private Subnet (10.0.2.0/24)
+- Public EC2 (SSH access)
+- Private EC2 (internal only)
 
+---
 
+## 🚀 Step-by-Step Implementation
 
-<h2>Environments Used </h2>
+---
 
-- <b>Windows 11</b>
+## 🌐 Step 1: Create a VPC
 
-<h2>Lab walk-through:</h2>
+📝 **What you're doing:**  
+Creating a Virtual Private Cloud to logically isolate your AWS network.
 
-<p align="center">
-Connected PCs to the switch and the switch to the router using copper straight-through cables. Establish physical network connectivity and simulate a real-world LAN deployment : <br/>
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1771182342/Screenshot_2026-02-14_092441_ateiiz.png"/>
-<br />
-<br />
-Assigned IP addresses and subnet masks to both PCs and configure the router interface as the default gateway :  <br/>
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1771182339/Screenshot_2026-02-14_110935_exty1v.png"/>
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1771182340/Screenshot_2026-02-14_093338_ublajj.png"/>  
-<br />
-<br />
-Configure the router interface with IP address, subnet mask and no shutdown. The purpose is enable Layer 3 routing functionality and acitvate the interface as well as verify connectivity: <br/>
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1771182339/Screenshot_2026-02-14_104957_mvsjz1.png"/>
-<br />
-<br />
+💡 **Why this matters:**  
+The VPC is the foundation of your cloud environment. All resources must exist within it.
 
-<br />
-<br />
+⚙️ **Steps:**
+1. Navigate to VPC Dashboard  
+2. Click **Create VPC**  
+3. Set CIDR block to `10.0.0.0/16`  
 
-</p>
+✅ **Expected Result:**  
+A new VPC is created and available for resource deployment.
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+---
+
+## 🌐 Step 2: Create Subnets (Public & Private)
+
+📝 **What you're doing:**  
+Creating separate network segments for public-facing and internal resources.
+
+💡 **Why this matters:**  
+Subnetting improves **security and organization** by isolating resources.
+
+⚙️ **Steps:**
+1. Go to **Subnets → Create subnet**  
+2. Select your VPC  
+3. Create:
+   - Public Subnet → `10.0.1.0/24`  
+   - Private Subnet → `10.0.2.0/24`  
+
+✅ **Expected Result:**  
+Two subnets successfully created within your VPC.
+
+---
+
+## 🌐 Step 3: Attach an Internet Gateway
+
+📝 **What you're doing:**  
+Enabling internet access for resources in the public subnet.
+
+💡 **Why this matters:**  
+Without an Internet Gateway, your VPC cannot communicate with the internet.
+
+⚙️ **Steps:**
+1. Go to **Internet Gateways → Create**  
+2. Attach it to your VPC  
+
+✅ **Expected Result:**  
+Your VPC now has internet connectivity capability.
+
+---
+
+## 📡 Step 4: Configure Route Tables
+
+📝 **What you're doing:**  
+Defining how traffic flows within your network.
+
+💡 **Why this matters:**  
+Route tables control whether resources can reach the internet or stay private.
+
+⚙️ **Steps:**
+1. Create a route table for the public subnet  
+2. Add route:
+   - Destination: `0.0.0.0/0`  
+   - Target: Internet Gateway  
+3. Associate this route table with the **public subnet**
+
+✅ **Expected Result:**  
+Public subnet can route traffic to the internet.
+
+---
+
+## 🖥️ Step 5: Launch EC2 Instances
+
+📝 **What you're doing:**  
+Deploying virtual machines into your network.
+
+💡 **Why this matters:**  
+This simulates real-world workloads inside your cloud infrastructure.
+
+⚙️ **Steps:**
+1. Launch 2 EC2 instances:
+   - Public EC2 → Public subnet  
+   - Private EC2 → Private subnet  
+2. Enable auto-assign public IP for public instance  
+
+✅ **Expected Result:**  
+Two running instances in separate subnets.
+
+---
+
+## 🔐 Step 6: Configure Security Groups
+
+📝 **What you're doing:**  
+Controlling inbound and outbound traffic at the instance level.
+
+💡 **Why this matters:**  
+Security Groups act as a **virtual firewall**.
+
+⚙️ **Steps:**
+- Public EC2:
+  - Allow SSH (port 22) from your IP  
+- Private EC2:
+  - Allow ICMP (ping) from **public EC2 security group**
+
+✅ **Expected Result:**  
+Secure and controlled communication between resources.
+
+---
+
+## 📡 Step 7: Connect to Public EC2 (Jump Host)
+
+📝 **What you're doing:**  
+Using the public EC2 instance as a **jump host (bastion)** to access internal resources.
+
+💡 **Why this matters:**  
+The private EC2 does not have a public IP, so it **cannot be accessed directly from the internet**.  
+The public EC2 acts as a secure entry point into the private network.
+
+⚙️ **Steps:**
+```bash
+ssh -i your-key.pem ec2-user@<public-ip>
