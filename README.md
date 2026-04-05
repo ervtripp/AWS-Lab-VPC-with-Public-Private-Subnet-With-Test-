@@ -81,7 +81,7 @@ Without an Internet Gateway, your VPC cannot communicate with the internet.
 
 ✅ **Expected Result:**  
 Your VPC now has internet connectivity capability.
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264481/Screenshot_2026-04-01_221038_zgqt66.png" />
 
 
 ---
@@ -124,6 +124,10 @@ This simulates real-world workloads inside your cloud infrastructure.
 
 ✅ **Expected Result:**  
 Two running instances in separate subnets.
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_222838_kt8293.png" />
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_222229_j0mt6e.png" />
+
+
 
 ---
 
