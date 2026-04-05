@@ -42,7 +42,7 @@ The VPC is the foundation of your cloud environment. All resources must exist wi
 
 ✅ **Expected Result:**  
 A new VPC is created and available for resource deployment.
-<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215111_itmjor.png" />
 
 ---
 
@@ -63,6 +63,7 @@ Subnetting improves **security and organization** by isolating resources.
 
 ✅ **Expected Result:**  
 Two subnets successfully created within your VPC.
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
 
 ---
 
@@ -80,6 +81,8 @@ Without an Internet Gateway, your VPC cannot communicate with the internet.
 
 ✅ **Expected Result:**  
 Your VPC now has internet connectivity capability.
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
+
 
 ---
 
@@ -100,6 +103,8 @@ Route tables control whether resources can reach the internet or stay private.
 
 ✅ **Expected Result:**  
 Public subnet can route traffic to the internet.
+<img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264478/Screenshot_2026-04-01_221809_g8lwtf.png" />
+
 
 ---
 
