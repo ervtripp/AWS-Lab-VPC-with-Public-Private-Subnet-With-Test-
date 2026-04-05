@@ -30,10 +30,10 @@ Design and deploy a secure AWS network using a custom VPC with public and privat
 ## 🌐 Step 1: Create a VPC
 
 📝 **What you're doing:**  
-Creating a Virtual Private Cloud to logically isolate your AWS network.
+Creating a Virtual Private Cloud to logically isolate an AWS network.
 
 💡 **Why this matters:**  
-The VPC is the foundation of your cloud environment. All resources must exist within it.
+The VPC is the foundation of the cloud environment. All resources must exist within it.
 
 ⚙️ **Steps:**
 1. Navigate to VPC Dashboard  
@@ -56,13 +56,13 @@ Subnetting improves **security and organization** by isolating resources.
 
 ⚙️ **Steps:**
 1. Go to **Subnets → Create subnet**  
-2. Select your VPC  
+2. Select the VPC  
 3. Create:
    - Public Subnet → `10.0.1.0/24`  
    - Private Subnet → `10.0.2.0/24`  
 
 ✅ **Expected Result:**  
-Two subnets successfully created within your VPC.
+Two subnets successfully created within the VPC.
 <img src="https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
 
 ---
@@ -73,11 +73,11 @@ Two subnets successfully created within your VPC.
 Enabling internet access for resources in the public subnet.
 
 💡 **Why this matters:**  
-Without an Internet Gateway, your VPC cannot communicate with the internet.
+Without an Internet Gateway, the VPC cannot communicate with the internet.
 
 ⚙️ **Steps:**
 1. Go to **Internet Gateways → Create**  
-2. Attach it to your VPC  
+2. Attach it to the VPC  
 
 ✅ **Expected Result:**  
 Your VPC now has internet connectivity capability.
@@ -89,7 +89,7 @@ Your VPC now has internet connectivity capability.
 ## 📡 Step 4: Configure Route Tables
 
 📝 **What you're doing:**  
-Defining how traffic flows within your network.
+Defining how traffic flows within the network.
 
 💡 **Why this matters:**  
 Route tables control whether resources can reach the internet or stay private.
@@ -111,7 +111,7 @@ Public subnet can route traffic to the internet.
 ## 🖥️ Step 5: Launch EC2 Instances
 
 📝 **What you're doing:**  
-Deploying virtual machines into your network.
+Deploying virtual machines into the network.
 
 💡 **Why this matters:**  
 This simulates real-world workloads inside your cloud infrastructure.
