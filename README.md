@@ -42,6 +42,7 @@ The VPC is the foundation of your cloud environment. All resources must exist wi
 
 ✅ **Expected Result:**  
 A new VPC is created and available for resource deployment.
+<img "https://res.cloudinary.com/dsz8pn2ym/image/upload/v1775264485/Screenshot_2026-04-01_215818_onsllt.png" />
 
 ---
 
