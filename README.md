@@ -1,4 +1,4 @@
-# 🧪 AWS Networking Lab: Public & Private Subnet Architecture
+# 🧪 AWS Networking Lab: Public & Private Subnet Architecture:Part 1
 
 ## 🎯 Objective
 Design and deploy a secure AWS network using a custom VPC with public and private subnets, enabling controlled internet access and internal communication between resources.
